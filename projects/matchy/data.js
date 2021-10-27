@@ -31,6 +31,7 @@ console.log(noises);
 //////////////////////////////////////////////////////////////////////
 animal['noises'] = noises;
 animal.noises.push('yawn');
+console.log('animal');
 /* *******************************************************************
  * Step 4 - Review
  *

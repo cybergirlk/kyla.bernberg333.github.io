@@ -9,7 +9,8 @@
  *     that returns a contact object.
  *     
  *          ex: makeContact(1, 'Max', 'Gaudin'); // => {id: 1, nameFirst: 'Max', nameLast: 'Gaudin'}
- *     
+ 
+
  *  b. Create a factory Function called makeContactList that returns an Object 
  *     that manages contacts. The contact-list object should have the following methods:
  *       
@@ -35,17 +36,20 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-    var contact1 = {
-        id: 'cybergirlk',
+  var contact = {
+        id: '1',
         nameFirst: 'Kyla',
         nameLast: 'Bernberg'
-makeContact(){
-    return contact1.id + " " + contact1.nameFirst + " " + contact1.nameLast
-}
-    };
+  }
+  
+
+// makeContact(){
+//     return contact1.id + " " + contact1.nameFirst + " " + contact1.nameLast
+// }
+//     };
 
 } 
-//factory function
+// //factory function
 //returns an object
 
 
@@ -53,38 +57,38 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts = [];//[{nameFirst:'Alex", }]
+    // var contacts = [];//[{nameFirst:'Alex", }]
     
-    return {
-        // we implemented the length api for you //
-        length: function() {
-            return contacts.length;
-        },
-        addContact:function(contact){// id:2, nameFirst:'Alex, name;ast
-            //code for this method
-            contact.push(contact);
-        }
-        function findContact(fullName){
+    // return {
+    //     // we implemented the length api for you //
+    //     length: function() {
+    //         return contacts.length;
+    //     },
+    //     addContact:function(contact){// id:2, nameFirst:'Alex, name;ast
+    //         //code for this method
+    //         contact.push(contact);
+    //     }
+    //     function findContact(fullName){
     
-            //takes a fullname string
-            //returns contact object if found
-            //returns undefined if it does not match contact list
-        }
-     function removeContact(contact){
-         //takes a contact object to be removed from contact list
+    //         //takes a fullname string
+    //         //returns contact object if found
+    //         //returns undefined if it does not match contact list
+    //     }
+    //  function removeContact(contact){
+    //      //takes a contact object to be removed from contact list
 
-        }
+    //     }
 
-        function printAllContactNames(contacts){
-            var printAllContactNames = "";
-            for(var i = 0; i <contacts.length;i++){
-              if(i === contact.length; i++){
-                  printAllContactNames += contact[i]
-              } else {
-                  printAllContactNames += arr[i] + ",\n";
-              }
-        }
-    }
+    //     function printAllContactNames(contacts){
+    //         var printAllContactNames = "";
+    //         for(var i = 0; i <contacts.length;i++){
+    //           if(i === contact.length; i++){
+    //               printAllContactNames += contact[i]
+    //           } else {
+    //               printAllContactNames += arr[i] + ",\n";
+    //           }
+    //     }
+    // }
 
 
 }
@@ -104,3 +108,4 @@ if((typeof process !== 'undefined') &&
     module.exports.makeContact = makeContact;
     module.exports.makeContactList = makeContactList;
 }
+

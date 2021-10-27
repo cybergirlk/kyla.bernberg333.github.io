@@ -38,13 +38,18 @@ function replace(animals, name, replacement){
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function remove(animals, name){
+
     for(let i = 0; i < animals.length; i++){
         if (animals[i].name === name){
-            delete animals.name;
+           return animals.splice(i, name);
+
         }
-        return remove(animal, cat);
-    }
-}
+        return animals;
+     }
+        
+ }
+    // return remove(animals, cat);
+
 
 
 //////////////////////////////////////////////////////////////////////

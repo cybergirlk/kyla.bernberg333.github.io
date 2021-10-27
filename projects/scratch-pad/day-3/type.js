@@ -13,17 +13,17 @@
  * work?
  */
 function isArray(value) {
-    // YOUR CODE BELOW HERE //
-  
-  if (Array.isArray(value)){
-      return true
+  // YOUR CODE BELOW HERE //
+
+  if (Array.isArray(value)) {
+    return true
   } else {
-      return false
+    return false
   }
 
-    
-    
-    // YOUR CODE ABOVE HERE //
+
+
+  // YOUR CODE ABOVE HERE //
 }
 
 /** 
@@ -35,26 +35,26 @@ function isArray(value) {
  * with typeof.
  */
 function isObject(value) {
-        // YOUR CODE BELOW HERE //
-      // if (Array.isArray(value)){
-      //     return true
-      // } else {
-      //     return false
-      // }
-      if(Array.isArray(value)) {
-        return false
-      } else if(value instanceof Date) {
-        return false
-      } else if (value === null){
-        return false
-      }
-       else if(typeof value === "object") {
-        return true
-      } else {
-        return false
-      }
-    }
-    
+  // YOUR CODE BELOW HERE //
+  // if (Array.isArray(value)){
+  //     return true
+  // } else {
+  //     return false
+  // }
+  if (Array.isArray(value)) {
+    return false
+  } else if (value instanceof Date) {
+    return false
+  } else if (value === null) {
+    return false
+  }
+  else if (typeof value === "object") {
+    return true
+  } else {
+    return false
+  }
+}
+
 
 /** 
  * Given an input value, return true if is either an Array or an an Object 
@@ -63,16 +63,16 @@ function isObject(value) {
  * TIP: Similar to isObject, but we must return true if the value is an Array.
  */
 function isCollection(value) {
-    // YOUR CODE BELOW HERE //
-    
-    if (isObject(value) || isArray(value)){
-        return true
-    } else {
-        return false 
-    }
-    
-    
-    // YOUR CODE ABOVE HERE //
+  // YOUR CODE BELOW HERE //
+
+  if (isObject(value) || isArray(value)) {
+    return true
+  } else {
+    return false
+  }
+
+
+  // YOUR CODE ABOVE HERE //
 }
 
 /**
@@ -93,22 +93,35 @@ function isCollection(value) {
  *    typeOf(134) -> "number"
  *    typeOf("javascript") -> "string"
  *    typeOf([1,2,3]) -> "array"
- */ 
+ */
 function typeOf(value) {
-    // YOUR CODE BELOW HERE //
-   return value.toString()
-    
-    
-    
+  // if (Array.isArray(value) {
+  //   return 'array';
+  // }
+  // else if ()
+  var obj = {
+{
+        console.log("valueOf");
+        return {}; // not a primitive, keep going
+    },
+    toString: function () {
+        console.log("toString");
+        return {}; // not a primitive, keep going
+    }
+};  
+
+
+
+
     // YOUR CODE ABOVE HERE //
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-    (typeof process.versions.node !== 'undefined')) {
-    // here, export any references you need for tests //
-    module.exports.isArray = isArray;
-    module.exports.isObject = isObject;
-    module.exports.isCollection = isCollection;
-    module.exports.typeOf = typeOf;
+if ((typeof process !== 'undefined') &&
+  (typeof process.versions.node !== 'undefined')) {
+  // here, export any references you need for tests //
+  module.exports.isArray = isArray;
+  module.exports.isObject = isObject;
+  module.exports.isCollection = isCollection;
+  module.exports.typeOf = typeOf;
 }
