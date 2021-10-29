@@ -95,25 +95,26 @@ function isCollection(value) {
  *    typeOf([1,2,3]) -> "array"
  */
 function typeOf(value) {
-  // if (Array.isArray(value) {
-  //   return 'array';
-  // }
-  // else if ()
-  var obj = {
-{
-        console.log("valueOf");
-        return {}; // not a primitive, keep going
-    },
-    toString: function () {
-        console.log("toString");
-        return {}; // not a primitive, keep going
+ 
+    if (typeof value === 'string') {
+        return 'string'
+    } else if (typeof value === 'number') {
+        return 'number'
+    } else if (typeof value === 'object' && Array.isArray(value)) {
+        return 'array'
+    } else if (typeof value === 'boolean') {
+        return 'boolean'
+    } else if (typeof value === 'function') {
+        return 'function'
+    } else if (typeof value === 'undefined') {
+        return 'undefined'
+    } else if (value == null){
+        return 'null'
+    } else if (value !== null && Array.isArray(value) !== true && typeof value === 'object') {
+        return 'object'
+    } else if ((new Date()) instanceof value){
+      return 'date'
     }
-};  
-
-
-
-
-    // YOUR CODE ABOVE HERE //
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

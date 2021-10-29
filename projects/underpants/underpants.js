@@ -1,9 +1,9 @@
 // This makes the arguments variable behave the way we want it to and a few
 // other things. For more info:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
-'use strict';
+'use strict'
 
-
+var _ = {};
 /**
 * START OF OUR LIBRARY!
 * Implement each function below its instructions
@@ -18,13 +18,10 @@
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
-//  function identity(a){
-//     let value 
-//     if (identity(a) === a){
-//         return a
-//     }
-//     }
-//  }
+_.identity = function(a){
+        return a
+    }
+
 
 
 /** _.typeOf
@@ -45,21 +42,58 @@
 * _.typeOf(134) -> "number"
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
-
-function typeOf(value){
-if (Array.isArray(value)) {
-    return ('array)
-  } else if (value === null) {
-    return ('value')
-  }
-  else if (typeof()  === "object") {
-    return "object"
-  } else if (typeOf() === 'number')
-  }
-}
-}
-
 */
+
+// _.typeOf = function{
+//   if (typeof value === 'string'){
+//     return 'string'
+//   } else if (typeof value === 'number'){
+//     return 'number'
+//   } else if (Array.isArray(value)){
+//     return 'array'
+//   } else if (value === null){
+//     return 'null'
+//   } else if (typeof value === 'boolean'){
+//     return 'boolean'
+//   } else if (typeof value === 'undefined'){
+//     return 'undefined'
+//   } else if (typeof value === 'function'){
+//     return 'function'
+//   } else {
+//     return 'object'
+//   }
+//   }
+  _.typeOf = function(value) {
+    if (typeof value === 'string') {
+        return 'string'
+    } else if (typeof value === 'number') {
+        return 'number'
+    } else if (typeof value === 'object' && Array.isArray(value)) {
+        return 'array'
+    } else if (typeof value === 'boolean') {
+        return 'boolean'
+    } else if (typeof value === 'function') {
+        return 'function'
+    } else if (typeof value === 'undefined') {
+        return 'undefined'
+    } else if (value == null){
+        return 'null'
+    } else if (value !== null && Array.isArray(value) !== true && typeof value === 'object') {
+        return 'object'
+    }
+}
+// if (Array.isArray(value)) {
+//     return ('array')
+//   } else if (value === null) {
+//     return ('null')
+//   }
+//   else if (typeof(value)  === "object") {
+//     return "object"
+//   } else if (typeOf() === 'number')
+//   }
+// }
+// }
+
 
 
 /** _.first
@@ -79,6 +113,16 @@ if (Array.isArray(value)) {
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
+_.first = function(array, number) {
+    var outputArr = []
+    if (typeof array === 'object' && Array.isArray(value)){
+        return []
+    } else if (typeof number === 'number'){
+        return array[0]
+    } else {
+        return 
+    }
+}
 
 
 /** _.last
@@ -119,8 +163,8 @@ if (Array.isArray(value)) {
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
-function indexOF(); 
-let array
+// // function indexOF(); 
+// let array
 
 /** _.contains
 * Arguments:
@@ -308,6 +352,25 @@ let array
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+_.reduce = function(array, func, seed){
+    if (seed === undefined) {
+        seed = array[0];
+        for (var i = 1; i < array.length; i ++) {
+           seed = func(seed, array[i], i);
+        }
+    } else {
+        for (var i = 0; i < array.length; i++){
+            seed = func(seed, array[i], i);
+        }
+    }
+    return seed;
+
+}
+// reduce function has to be called on an array
+// seed is like initial value you are setting
+
+
+
 
 
 /** _.extend

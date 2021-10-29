@@ -2,6 +2,8 @@
 
 'use strict';
 
+// const { isNull } = require("lodash");
+
 /**
  * 4: Contact List
  * 
@@ -36,24 +38,101 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-  var contact = {
-        id: '1',
-        nameFirst: 'Kyla',
-        nameLast: 'Bernberg'
-  }
-  
+  var contact = {}
+    contact['id'] = id
+    contact['nameFirst'] = nameFirst
+    contact['nameLast'] = nameLast
+    return contact
 
+  }
+
+
+  
 // makeContact(){
 //     return contact1.id + " " + contact1.nameFirst + " " + contact1.nameLast
 // }
 //     };
 
-} 
+
 // //factory function
 //returns an object
 
 
 function makeContactList() {
+let contactObj = {};
+let contacts = [];
+
+ 
+contactObj['length'] = function contactLength(){
+ return contacts.length
+}
+contactObj['addContact'] = function addContact(contact){
+return contacts.push(contact);
+}
+contactObj['removeContact'] = function removeContact(contact){
+  for(let i = 0; i < contacts.length; i++){// loop thru array
+    if (contacts[i].id === contact.id){
+      contacts.splice(i, 1);//use splice method to remove
+    }
+  }
+}
+contactObj['findContact'] = function findContact(fullName){
+  for(let i = 0; i <= contacts.length; i++){
+    let nameFull = contacts[i].nameFirst + " " + contacts[i].nameLast
+    if (nameFull === fullName){
+      return contacts[i];
+    } else {
+      return undefined
+    }
+  }
+  }
+  contactObj['printAllContactNames'] = function printAllContactNames(){
+  var outputStr = '';
+    for (var i = 0; i < contacts.length; i++){
+      if (i < contacts.length-1){
+        outputStr += (`${contacts[i].nameFirst} ${contacts[i].nameLast}\n`);
+      } else {
+        outputStr += (`${contacts[i].nameFirst} ${contacts[i].nameLast}`);
+      }
+    }
+    return outputStr;
+  }
+
+
+
+return contactObj;
+}
+
+
+// function findContact(fullName){
+//   //takes a fullname string and returns a contact object
+//   let fullName = ''
+//   fullName.push('firstName' + ' ' + 'lastName')
+//   return fullName
+// // }
+// function removeContact(contact){
+//   //takes a contact object to be removed from the contact list
+//  let removedContact = '';
+//  removedContact = contact.pop()
+//  return removedContact
+
+
+
+
+
+
+
+//   let printAllContactNames = ''
+//   function printAllContactNames(){
+//     for(var i = 0; i < contacts.length; i++){
+//       if(i === contact.length; i = 0; i++){
+//           printAllContactNames += contact[i]
+//       } else {
+//           printAllContactNames += arr[i] + ",\n";
+//       }
+//   }
+// }
+// }
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
@@ -78,24 +157,6 @@ function makeContactList() {
     //      //takes a contact object to be removed from contact list
 
     //     }
-
-    //     function printAllContactNames(contacts){
-    //         var printAllContactNames = "";
-    //         for(var i = 0; i <contacts.length;i++){
-    //           if(i === contact.length; i++){
-    //               printAllContactNames += contact[i]
-    //           } else {
-    //               printAllContactNames += arr[i] + ",\n";
-    //           }
-    //     }
-    // }
-
-
-}
-
-
-
-
 // YOUR CODE GOES ABOVE HERE //
 
 

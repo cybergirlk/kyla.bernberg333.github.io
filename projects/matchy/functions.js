@@ -38,14 +38,18 @@ function replace(animals, name, replacement){
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function remove(animals, name){
-
     for(let i = 0; i < animals.length; i++){
         if (animals[i].name === name){
-           return animals.splice(i, name);
-
+            return animals.splice(i, 1)
         }
-        return animals;
-     }
+    }
+
+    // for(let i = 0; i < animals.length; i++){
+    //     if (animals[i].name === name){
+    //        return animals.splice(i, name);
+
+    //     } 
+    //  }
         
  }
     // return remove(animals, cat);
@@ -55,7 +59,16 @@ function remove(animals, name){
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+function add(animals, animal){
+    let falseVar = false
+    for(let i = 0; i < animals.length; i++){
+        if (animals[i].name === animal.name){
+            return falseVar
+        }
+        else if ((animal.name.length > 0) && (animal.species.length > 0))
+       return animals.push(animal)
+    }
+}
 
 
 /**

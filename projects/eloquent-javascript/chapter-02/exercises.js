@@ -3,13 +3,13 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() {
+function triangles(size) {
   // write a loop triangle that makes seven calls to the console to out put
   //#
   //##
   //###
   // till 7 #'s
-  for (let triangle = '#'; triangle.length <= 7; triangle += '#'){
+  for (let triangle = '#'; triangle.length <= size; triangle += '#'){
   console.log(triangle);
   }
 
@@ -48,10 +48,10 @@ for (let i = 1; i <= 100; i++){
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
+function drawChessboard(size) {
 
 
-let size = 8;// sets limit for the iteration used in our loop
+// sets limit for the iteration used in our loop
 let board = "";//sets a blank placeholder to be filled w our if statements
 for (let x = 0; x < size; x++){// z represents the vertical assents the rows
 //now i will create a for loop
@@ -68,7 +68,7 @@ for (let x = 0; x < size; x++){// z represents the vertical assents the rows
 
     }
   }
-  board += "/n";// create a new line "/n" 
+  board += "\n";// create a new line "/n" 
   // this line is associated with the x loop
   //therefore it makes sure the loop of x has completed to its entirety before breaking for a new line
   

@@ -21,12 +21,13 @@ function createGreaterThanFilter(base) {
 //            return false
 //        }
 //    }
-    return function (counter) {
+    return function(counter){
         if (counter > base){
             return true
         } 
         return false
-    };
+    }
+}
     // YOUR CODE ABOVE HERE //
 
 // /** 
@@ -91,20 +92,31 @@ return function (string) {
 
 // /** 
 //  * Given an Array of Strings and a Function designed to modify a String, 
-//  * return the Array of the Strings, modified.
+//  * return the Array of the Strings, modiied.
 //  * 
 //  * TIP: You need to loop over the Strings, right? We need to pass each String to 
 //  * the modify Function, but we need to collect the results into some collection.
 //  */
 function modifyStrings(strings, modify) {
 //     // YOUR CODE BELOW HERE //
+let arrStringsModified = [];
+for (let i = 0; i < strings.length; i++){
+arrStringsModified.push(modify(strings[i]))
+
+
+}
+return arrStringsModified
+}
+
+
+//
 
     
     
     
     
 //     // YOUR CODE ABOVE HERE //
-}
+
 
 // /** 
 //  * Given an Array of Strings and a Function designed to test the String in some 
@@ -116,16 +128,26 @@ function modifyStrings(strings, modify) {
 //  * TIP: You need to loop over the Strings, right? And pass them to the test?
 //  */
 function allStringsPass(strings, test) {
-//     // YOUR CODE BELOW HERE //
-//     // strings is an array
-//     //test is a function
-var trueArr = [];
-var falseCount = [] ;
-    for (var i = 0; i < strings.length; i++){
-       if(test(strings[i] === true)){
-        trueArr = true
-       }
-    }
+    // let arrStringsTest= []
+    // for (var i = 0; i < strings.length; i++){
+    //    if((strings[i].toUpperCase === strings.toUpperCase)){
+    //     return arrStringsTest.push(test(strings[i])){
+            
+        
+    //    } 
+    //    return false
+    // }
+
+// let passTest = [];
+// for (let i = 0; i < strings.length; i++){
+//     if()
+// passTest.push(modify(strings[i]))
+
+
+// }
+// return arrStringsModified
+}
+// }
 
 
         // if (condition1) {
@@ -136,18 +158,18 @@ var falseCount = [] ;
         //     //  block of code to be executed if the condition1 is false and condition2 is false
         //   }
           
-        if (test(strings[i]) === true){
-            return true
-        }
-         else {
-                (falseCount += 1)
-            }
-            if (falseCount > 0){
-                return true;
-            } else {
-                return true;
-            }
-        }
+        // if (test(strings[i]) === true){
+        //     return true
+        // }
+        //  else {
+        //         (falseCount += 1)
+        //     }
+        //     if (falseCount > 0){
+        //         return true;
+        //     } else {
+        //         return true;
+        //     }
+        // }
     
     
     
